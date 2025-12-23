@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html
+  lang="pt-br"
+  x-data="{dark:true, activeTab:'tradicionais'}"
+  :class="{'dark': dark}"
+  class="scroll-smooth"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cake.js — Bolos de Pote</title>
+    <meta
+      name="description"
+      content="Cake.js — Bolos de pote artesanais e gourmet. Sabores clássicos e especiais, encomendas pelo WhatsApp."
+    />
+    <link rel="icon" href="https://fav.farm/🍰" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              ink: {
+                bg: "#0b0b0d",
+                panel: "#101014",
+                line: "#191922",
+                purple: "#8b5cf6",
+                purple2: "#a78bfa",
+              },
+            },
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+
+    <!-- Icons & libs -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+  </head>
+
+  <body
+    class="font-sans text-slate-100 bg-[color:var(--ink-bg,var(--INK,#0b0b0d))] bg-grid"
+    style="--ink-bg: #0b0b0d"
+  >
+    <!-- Navbar -->
+    <header id="top" class="fixed z-50 w-full nav-blur">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    
+    <a href="#hero" class="flex items-center gap-2 font-semibold">
+      <i class="ph-fill ph-cake text-xl" style="color: #461100"></i>
+      <span>Cake.js</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-slate-300">
+      <a href="#sabores">Sabores</a>
+      <a href="#conservacao">Conservação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="hidden sm:flex items-center gap-3">
+      <a
+        href="https://wa.me/+5511943873648"
+        class="flex items-center gap-2 px-5 py-2 rounded-lg text-white shine"
+        style="background: #461100"
+      >
+        <i class="ph ph-whatsapp-logo"></i>WhatsApp
+      </a>
+
+      <a
+        href="https://www.instagram.com/_cake.js/"
+        class="flex items-center gap-2 px-5 py-2 rounded-lg text-white shine"
+        style="background: #461100"
+      >
+        <i class="ph ph-instagram-logo"></i>Instagram
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+    <!-- Hero -->
+    <section id="hero" class="pt-32">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <span
+            class="inline-flex px-3 py-1 rounded-full glass-dark text-sm mb-4"
+          >
+            🍰 Encomendas
+          </span>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Bolos de pote artesanais com
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#723710] to-white"
+            >
+              sabor & qualidade
+            </span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-300">
+            Receitas equilibradas, ingredientes selecionados e aquele sabor de
+            confeitaria gourmet.
+          </p>
+          <p class="mt-2 text-xl">
+            <span
+              id="typed"
+              class="font-semibold"
+              style="color: #723710"
+            ></span>
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a
+              href="#sabores"
+              class="px-5 py-3 rounded-lg shine text-white"
+              style="background: #9d5d20"
+            >
+              Ver sabores
+            </a>
+            <a
+              href="#cardapio"
+              class="px-5 py-3 rounded-lg border border-white/10"
+            >
+              Ver tamanhos
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden glass-dark">
+          <img
+            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1600"
+            alt="Bolo de pote gourmet"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sabores -->
+    <section id="sabores" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Sabores disponíveis</h2>
+        <p class="text-slate-400 mt-1">
+          Clássicos e especiais feitos para viciar.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Chocolate</h3>
+            <p class="text-slate-300 mt-2">
+              Massa úmida, recheio cremoso e cobertura intensa.
+            </p>
+            <p class="text-slate-700 mt-2 text-1xl font-semibold">
+          Tradicional
+        </p>
+          </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Ninho com Morango</h3>
+            <p class="text-slate-300 mt-2">
+              Leve, equilibrado e extremamente cremoso.
+            </p>
+            <p class="text-slate-700 mt-8 text-1xl font-semibold">
+          Especial
+        </p>
+          </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Prestígio</h3>
+            <p class="text-slate-300 mt-2">
+              Chocolate intenso com recheio cremoso de coco. Clássico, marcante
+              e irresistível.
+            </p>
+            <p class="text-slate-700 mt-2 text-1xl font-semibold">
+          Tradicional
+        </p>
+          </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Chantininho</h3>
+            <p class="text-slate-300 mt-2">
+              Massa fofinha com chantininho leve e cremoso. Suave, doce na
+              medida e apaixonante.
+            </p>
+            <p class="text-slate-700 mt-2 text-1xl font-semibold">
+          Especial
+        </p>
+          </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Em breve...</h3>
+            <p class="text-slate-300 mt-2">
+            </p>
+        </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Em breve...</h3>
+            <p class="text-slate-300 mt-2">
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cardápio -->
+    <section id="cardapio" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Tamanhos Cake.js</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Tradicional • 250ml</h3>
+            <p class="text-3xl font-extrabold mt-3">R$ 15</p>
+          </div>
+          <div
+            class="glass-dark p-6 rounded-xl ring-2"
+            style="--tw-ring-color: #9d5d20"
+          >
+            <h3 class="text-xl font-semibold">Especiais • 250ml</h3>
+            <p class="text-3xl font-extrabold mt-3">R$ 16</p>
+          </div>
+          <div class="glass-dark p-6 rounded-xl">
+            <h3 class="text-xl font-semibold">Premium</h3>
+            <p class="text-3xl font-extrabold mt-3">Sob encomenda</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conservação -->
+    <section id="pedidos" class="py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Conservação</h2>
+        <p class="text-slate-300 mt-2">Todos os bolos são feitos no mesmo dia da venda, com ingredientes frescos e armazenados em ambiente controlado.
+          Caso não sejam consumidos imediatamente, recomendamos mantê-los refrigerados por até 3 dias para preservar sua qualidade e sabor.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pedidos -->
+    <section id="pedidos" class="py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Faça seu pedido</h2>
+        <p class="text-slate-300 mt-2">Atendimento rápido pelo WhatsApp.</p>
+        <a
+          href="https://wa.me/+5511943873648"
+          class="inline-flex mt-6 px-8 py-4 rounded-xl shine text-white"
+          style="background: #9d5d20"
+        >
+          Pedir agora 🍰
+        </a>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="pb-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-bold">Cake.js</h3>
+        <p class="text-slate-300 mt-2">
+          Bolos de pote feitos com carinho e qualidade.
+        </p>
+      </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/10 text-center text-slate-400">
+      © <span id="ano"></span> Cake.js
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
